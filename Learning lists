@@ -1,0 +1,22 @@
+"""
+This program was to help me learn lists. 
+The program opens a file specified by the user
+and creates a list of all words in the file.
+"""
+
+fname = input("Enter file name :")
+if len(fname)<1:
+    fname = "romeo.txt"
+fhandle = open(fname)
+finallist = list()
+
+for i in fhandle:
+    r = i.rstrip()
+    lst = r.split()
+
+    for j in lst:
+        if j not in finallist:
+            finallist.append(j)
+
+finallist.sort()
+print(finallist)
