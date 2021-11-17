@@ -1,0 +1,12 @@
+"""
+This program was to learn how to open a file.
+It accepts the name of a file from the user,
+reads each line of the text and prints out the same.
+"""
+
+print("")
+filename = input("Enter name of the document that you'd like to open.")
+filehandle = open(filename)
+for i in filehandle:
+    i = i.rstrip()
+    print(i)
