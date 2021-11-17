@@ -1,0 +1,41 @@
+"""
+This program was created to help me learn functions 
+and it's usage. 
+The function wage_calculator calculates wages and
+returns it to the main function.
+"""
+def wage_calculator(hours, rate):
+    if hours >= 22 :
+        print("Worked over time")
+        othours = hours - 22
+        otrate = rate + 2
+        otwage = othours * otrate
+        wage = hours * rate
+        wage = wage + otwage
+    else:
+        wage = hours * rate
+    return(wage)
+
+print(" ")
+name = input("Enter name of the employee : ")
+hours = input("Enter number of hours worked : ")
+try:
+    hours = float(hours)
+except:
+    hours = -1
+if hours < 0:
+    print("Wrong input")
+    quit()
+rate = input("Enter rate per hour : ")
+try:
+    rate = float(rate)
+except:
+    rate = -1
+if rate < 0:
+    print("Wrong input")
+    quit()
+wage = wage_calculator(hours, rate)
+print("Name of employee :", name)
+print("Number of hours worked : ", hours)
+print("Rate per hour :", rate)
+print("Wage earned :", wage)
